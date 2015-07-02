@@ -8,7 +8,7 @@ RUN apt-get update && \
 
 WORKDIR /root
 
-ADD gitweb.conf /etc/apache2/conf-available
+ADD gitweb.conf /etc/apache2/conf-available/
 
 RUN git clone git://git.kernel.org/pub/scm/git/git.git && \
 	cd git && \
