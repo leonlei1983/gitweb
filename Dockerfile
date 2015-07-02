@@ -15,6 +15,7 @@ RUN git clone git://git.kernel.org/pub/scm/git/git.git && \
 	make GITWEB_PROJECTROOT="/opt/git" prefix=/usr gitweb && \
 	cp -Rf gitweb /var/www/ && \
 	ln -s ../conf-available/gitweb.conf /etc/apache2/conf-enabled/gitweb.conf && \
+	sed -i 's/font-size: small/font-size: large/g' /var/www/gitweb/static/gitweb.css && \
 	a2enmod cgi
 
 EXPOSE 80
