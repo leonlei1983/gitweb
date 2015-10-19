@@ -22,7 +22,7 @@ RUN ln -sf /etc/nginx/sites-available/gitweb /etc/nginx/sites-enabled/gitweb && 
 	sed -i 's/font-size: small/font-size: large/g' /var/www/gitweb/static/gitweb.css && \
 	sed -i 's/home_link_str = "projects"/home_link_str = "git"/g' /var/www/gitweb/gitweb.cgi && \
 	addgroup --gid 1001 git && \
-	usermod -aG 1001 www-data
+	usermod -aG git www-data
 
 EXPOSE 80 443
 
