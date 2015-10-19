@@ -18,6 +18,7 @@ RUN ln -sf /etc/nginx/sites-available/gitweb /etc/nginx/sites-enabled/gitweb && 
 	make GITWEB_PROJECTROOT="/opt/git" prefix=/usr gitweb && \
 	mkdir -p /var/www/ && \
 	cp -Rf gitweb /var/www/ && \
+	rm -rf /root/git && \
 	sed -i 's/font-size: small/font-size: large/g' /var/www/gitweb/static/gitweb.css && \
 	sed -i 's/home_link_str = "projects"/home_link_str = "git"/g' /var/www/gitweb/gitweb.cgi
 
