@@ -16,9 +16,10 @@ RUN ln -sf /etc/nginx/sites-available/gitweb /etc/nginx/sites-enabled/gitweb && 
 	git clone git://git.kernel.org/pub/scm/git/git.git && \
 	cd git && \
 	make GITWEB_PROJECTROOT="/opt/git" prefix=/usr gitweb && \
+	mkdir -p /var/www/ && \
 	cp -Rf gitweb /var/www/ && \
 	sed -i 's/font-size: small/font-size: large/g' /var/www/gitweb/static/gitweb.css && \
-	sed -i 's/home_link_str = "projects"/home_link_str = "git"/g' /var/www/gitweb/gitweb.cgi && \
+	sed -i 's/home_link_str = "projects"/home_link_str = "git"/g' /var/www/gitweb/gitweb.cgi
 
 EXPOSE 80 443
 
