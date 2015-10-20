@@ -1,6 +1,6 @@
 server {
   listen 80;
-  server_name localhost;
+  #server_name localhost;
 
   location /gitweb.cgi {
     root /var/www/gitweb/;
@@ -15,8 +15,8 @@ server {
     index gitweb.cgi;
   }
 
-  #location ~ /git(/.*)$ {
-  location ~ (/.*\.git/.*)$ {
+  #location ~ (/.*\.git/.*)$ {
+  location ~ /git(/.*)$ {
     # Set chunks to unlimited, as the body's can be huge
     client_max_body_size            0;
 
