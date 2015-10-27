@@ -1,7 +1,7 @@
 FROM leonlei1983/ubuntu
 
 RUN apt-get update && \
-	apt-get install -y apache2 && \
+	apt-get install -y apache2 apache2-utils && \
 	apt-get autoclean && \
 	apt-get autoremove && \
 	rm -rf /var/lib/apt/lists/*
